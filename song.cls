@@ -27,7 +27,7 @@
 }
 % find next chord
 \def\@srf@chr{\@ifnextchar\@srf@chr@end%
-	{\@srf@txt@gobble}%
+	{\@srf@txt@gobble\@gobble}%
 	{\@srf@chr@more}%
 }
 % gobble | in text
@@ -42,6 +42,7 @@
 	{\@gobble}%
 	{\@srf@chr#2\@srf@chr@end}%
 }
+%}}}
 %% strophe parsing {{{
 {\catcode`\^^M=12%
 	\gdef\@strophe{\catcode`\^^M=12 \@strof}%
