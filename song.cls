@@ -5,14 +5,17 @@
 
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[a5paper,margin=10mm]{geometry}
+\RequirePackage{ifthen}
 
 %% putting chords up {{{
 \newcommand{\@chord}[1]{\bf #1}
 \newlength{\@cwidth}
+\newlength{\@twidth}
 \newcommand{\@up}[2]{%
 	\settowidth{\@cwidth}{\@chord{#1}}%
+	\settowidth{\@twidth}{#2}%
 	\raisebox{0.8\baselineskip}[1.5\baselineskip][0.5\baselineskip]{\@chord{#1}}\hspace{-\@cwidth}%
-	#2%
+	\ifthenelse{\@cwidth > \@twidth}{\makebox[\@cwidth][l]{#2}}{#2}%
 }
 %}}}
 %% merging chords and lyrics {{{
