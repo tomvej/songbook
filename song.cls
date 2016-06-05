@@ -9,9 +9,10 @@
 %% putting chords up {{{
 \newcommand{\@chord}[1]{\bf #1}
 \newlength{\@cwidth}
-\newcommand{\@up}[1]{%
+\newcommand{\@up}[2]{%
 	\settowidth{\@cwidth}{\@chord{#1}}%
 	\raisebox{0.8\baselineskip}[1.5\baselineskip][0.5\baselineskip]{\@chord{#1}}\hspace{-\@cwidth}%
+	#2%
 }
 %}}}
 %% merging chords and lyrics {{{
@@ -34,7 +35,7 @@
 % retrieve next chord
 \def\@srf@chr@more#1 {\@srf@txt{#1}}
 % find next text part (and print)
-\def\@srf@txt#1#2\@srf@chr@end#3|{\@up{#1}#3\@ifnextchar\@srf@txt@end%
+\def\@srf@txt#1#2\@srf@chr@end#3|{\@up{#1}{#3}\@ifnextchar\@srf@txt@end%
 	{\@gobble}%
 	{\@srf@chr#2\@srf@chr@end}%
 }
