@@ -15,20 +15,29 @@
 }
 %}}}
 %% merging chords and lyrics {{{
-\newcommand{\@srf}[2]{\@srf@txt#1 \@srf@chr@end#2|\@srf@txt@end}
-% find next lyrics chunk
-\def\@srf@txt#1\@srf@chr@end#2|{\@ifnextchar\@srf@txt@end%
-	{#2\@gobble}%
-	{#2\@srf@chr#1\@srf@chr@end}%
+\newcommand{\@srf}[2]{\@srf@first#1 \@srf@chr@end#2|\@srf@txt@end}
+% print first lyrics part
+\def\@srf@first#1\@srf@chr@end#2|{#2\@ifnextchar\@srf@txt@end%
+	{\@gobble}%
+	{\@srf@chr#1\@srf@chr@end}%
 }
-% is there another chord?
+% find next chord
 \def\@srf@chr{\@ifnextchar\@srf@chr@end%
-	{\@srf@txt}%
+	{\@srf@txt@gobble}%
 	{\@srf@chr@more}%
 }
-% print next chord
-\def\@srf@chr@more#1 {\@up{#1}\@srf@txt}
-%}}}
+% gobble | in text
+\def\@srf@txt@gobble#1|{#1\@ifnextchar\@srf@txt@end%
+	{\@gobble}%
+	{\@srf@txt@gobble}%
+}
+% retrieve next chord
+\def\@srf@chr@more#1 {\@srf@txt{#1}}
+% find next text part (and print)
+\def\@srf@txt#1#2\@srf@chr@end#3|{\@up{#1}#3\@ifnextchar\@srf@txt@end%
+	{\@gobble}%
+	{\@srf@chr#2\@srf@chr@end}%
+}
 %% strophe parsing {{{
 {\catcode`\^^M=12%
 	\gdef\@strophe{\catcode`\^^M=12 \@strof}%
