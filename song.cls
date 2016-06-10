@@ -8,13 +8,13 @@
 \RequirePackage{ifthen}
 
 %% putting chords up {{{
-\newcommand{\@chord}[1]{\bf #1}
+\newcommand{\@@chord}[1]{\bf #1}
 \newlength{\@cwidth}
 \newlength{\@twidth}
 \newcommand{\@up}[2]{%
-	\settowidth{\@cwidth}{\@chord{#1}}%
+	\settowidth{\@cwidth}{\@@chord{#1}}%
 	\settowidth{\@twidth}{#2}%
-	\raisebox{0.8\baselineskip}[1.5\baselineskip][0.5\baselineskip]{\@chord{#1}}\hspace{-\@cwidth}%
+	\raisebox{0.8\baselineskip}[1.5\baselineskip][0.5\baselineskip]{\@@chord{#1}}\hspace{-\@cwidth}%
 	\ifthenelse{\@cwidth > \@twidth}{\makebox[\@cwidth][l]{#2}}{#2}%
 }
 %}}}
@@ -73,11 +73,6 @@
 %% repetition
 \def\[{{}[:}
 \def\]{:]}
-%% chorus
-\catcode`(=\active
-\catcode`)=\active
-\newcommand{(}{\bgroup\it}
-\newcommand{)}{\egroup}
 %}}}
 \setlength\parindent{0pt}
 \setlength\parskip{\baselineskip}

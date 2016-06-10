@@ -1,0 +1,7 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{choir}[2016/06/10 Renders text between parentheses as italics]
+
+\catcode`(=\active
+\catcode`)=\active
+\newcommand{(}{\bgroup\it}
+\newcommand{)}{\egroup}
