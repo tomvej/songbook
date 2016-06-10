@@ -1,0 +1,22 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{chords}[2016/06/10 Package with pre-made chords]
+\RequirePackage{gchords}
+
+%% settings
+\renewcommand{\numfrets}{4}
+
+%% auxiliary
+\let\@chords\chords
+\def\chords#1{\@chords{\chords@next#1,\chords@end}}
+\def\chords@next#1,{\chord{#1}\@ifnextchar\chords@end{\@gobble}{\chords@next}}
+
+%% chord list
+\let\@chord\chord
+\def\chord#1{%
+	\def\chord@left{#1}
+	\def\chord@case##1##2{\def\chord@right{##1}{\ifx\chord@left\chord@right##2\fi}}
+%
+	\chord@case{C6}{\@chord{t}{o,p3,p2,p2,p1,o}{C$^6$}}
+	\chord@case{C7/5+}{\@chord{t}{o,p3,p2,p1,p1,o}{C$^{7/5+}$}}
+	\chord@case{Cisdim}{\@chord{t}{o,p1,p2,o,p2,o}{C$^\#$dim}}
+}
