@@ -16,23 +16,30 @@
 	\def\chord@left{#1}
 	\def\chord@case##1##2{\def\chord@right{##1}{\ifx\chord@left\chord@right##2\fi}}
 %% C
-	\chord@case{C6}{\@chord{t}{o,p3,p2,p2,p1,o}{C$^6$}}
-	\chord@case{C7/5+}{\@chord{t}{o,p3,p2,p1,p1,o}{C$^{7/5+}$}}
+	\chord@case{C6}{\@chord{t}{o,p3,p2,p2,p1,o}{C$^6$}}%
+	\chord@case{C7/5+}{\@chord{t}{o,p3,p2,p1,p1,o}{C$^{7/5+}$}}%
 %% Cis
-	\chord@case{Cisdim}{\@chord{t}{o,p1,p2,o,p2,o}{C\#dim}}
+	\chord@case{Cisdim}{\@chord{t}{o,p1,p2,o,p2,o}{C\#dim}}%
+	\chord@case{Cis7}{\@chord{4}{p1,p1,p3,p1,p3,p1}{C$^{\#7}$}}%
+%% D
+	\chord@case{D6}{\@chord{t}{x,o,o,p2,o,p2}{D$^6$}}%
+	\chord@case{Ddim}{\@chord{t}{x,x,o,p1,o,p1}{Ddim}}%
+	\chord@case{Dmaj}{\@chord{t}{x,o,o,p2,p2,p2}{Dmaj}}%
 %% Es/Dis
-	\chord@case{Es7}{\@chord{t}{x,x,p1,p3,p2,p3}{Es$^7$}}
+	\chord@case{Es7}{\@chord{t}{x,x,p1,p3,p2,p3}{Es$^7$}}%
+	\chord@case{Disdim}{\@chord{t}{x,o,p1,p2,p1,p2}{D\#dim}}%
 %% E
-	\chord@case{Em6}{\@chord{t}{o,p2,p2,o,p2,o}{Em$^6$}}
+	\chord@case{Em6}{\@chord{t}{o,p2,p2,o,p2,o}{Em$^6$}}%
 %% F
-	\chord@case{Fisdim}{\@chord{t}{x,x,p1,p2,p1,p2}{F\#dim}}
+	\chord@case{Fisdim}{\@chord{t}{x,x,p1,p2,p1,p2}{F\#dim}}%
 %% G
-	\chord@case{G7/5+}{\@chord{3}{x,x,p3,p2,p2,p1}{G$^{7/5+}$}}
+	\chord@case{G7/5+}{\@chord{3}{x,x,p3,p2,p2,p1}{G$^{7/5+}$}}%
 %% As
-	\chord@case{As}{\@chord{4}{p1,p3,p3,p2,p1,p1}{As}}
-	\chord@case{As7}{\@chord{4}{p1,p3,p1,p2,p1,p1}{As$^7$}}
+	\chord@case{As}{\@chord{4}{p1,p3,p3,p2,p1,p1}{As}}%
+	\chord@case{As7}{\@chord{4}{p1,p3,p1,p2,p1,p1}{As$^7$}}%
 %% A
-	\chord@case{A7}{\@chord{t}{o,o,p2,o,p2,o}{A$^7$}}
+	\chord@case{A7}{\@chord{t}{o,o,p2,o,p2,o}{A$^7$}}%
+	\chord@case{A7/5+}{\@chord{t}{o,o,p2,o,p2,p1}{A$^{7/5+}$}}%
 %% B
-	\chord@case{B9}{\@chord{t}{p1,p1,o,p1,p1,p1}{B$^9$}}
+	\chord@case{B9}{\@chord{t}{p1,p1,o,p1,p1,p1}{B$^9$}}%
 }
