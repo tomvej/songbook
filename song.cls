@@ -57,6 +57,7 @@
 \def\strophe{\bgroup\@ifstar{\obeycr}{\@strophe}}
 \renewcommand{\ref}{\hspace{-1em}\textbf{REF}}
 \def\refrain{\ref: \strophe}
+\def\varrefrain{\ref*: \strophe}
 \newenvironment{recitative}{\it\obeycr}{}
 %}}}
 %% title {{{
