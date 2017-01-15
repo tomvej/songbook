@@ -30,3 +30,12 @@
 	}
 
 }
+
+{
+	\clef "G_8"
+	\repeat volta 2 {
+		e,8 <gis' e' b>4  e,8 <a' f' c'>4 e,8 <a' f' d'>8~ <a' f' d'>4. e,8 <gis' e' b>4 e,8 
+	}
+
+	% follow Dmi in 5th
+}
