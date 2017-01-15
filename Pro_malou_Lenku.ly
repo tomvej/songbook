@@ -10,6 +10,7 @@
 
 {
 	\clef "G_8"
+	\key g \major
 	<< { a,1 } \\ { a,8 e8 g8 c'8 g'8 c'8 g8 e8 } >>
 	<< { d1 } \\ { fis'8 d'8 a8 g'8(fis'8) d'8 a8 d8 } >>
 	<< { g,2 fis,2 } \\ { g,8 d8 g8 b8 fis,8 d8 g8 b8} >>
