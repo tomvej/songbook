@@ -11,6 +11,7 @@ mainStart = {
 	\set Staff.beatStructure = #'(4 2)
 	\set TabStaff.minimumFret = #7
 
+	\mark "A"
 	<< {e2.} \\ { g'8 d'8 b8 d'8 g'8( a'8) } >>
 	<< {b,2.} \\ { fis'8 d'8 b8 d'8 fis'8( g'8)} >>
 	<< {e2.} \\ { e8 b8 d'8 b8 fis'8( g'8) } >>
@@ -22,6 +23,7 @@ mainEnd = {
 	\set Staff.beatStructure = #'(4 2)
 	\set TabStaff.minimumFret = #7
 
+	\mark "B"
 	<< {e2.} \\ { g'8 d'8 b8 d'8 g'8( a'8) } >>
 	<< {b,2.} \\ { b'8 d'8 b8 d'8 b'8 a'8 } >>
 	<< {e2.} \\ { g'4 b8 e8 fis'8( g'8)} >>
@@ -33,6 +35,7 @@ mainEndVar = {
 	\set Staff.beatStructure = #'(4 2)
 	\set TabStaff.minimumFret = #7
 
+	\mark "B'"
 	<< {e2.} \\ { g'8 d'8 b8 d'8 g'8( a'8) } >>
 	<< {b,2.} \\ { b'8 d'8 <a' b>8 d'8 fis'8( g'8) } >>
 	<< {e2.} \\ { g'4 b8 e'8 fis'8( g'8) } >>
@@ -44,6 +47,7 @@ preludeStart = {
 	\set Staff.beatStructure = #'(4 2)
 	\set TabStaff.minimumFret = #7
 
+	\mark "A'"
 	<< {e2.} \\ { g'8 d'8 b8 d'8 g'8( a'8) } >>
 	<< {b,2.} \\ { fis'8 d'8 b8 d'8 fis'8( g'8)} >>
 	<< {e2.} \\ { b'8 a'8 g'8 fis'8 fis'8 d'8 } >>
