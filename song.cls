@@ -9,12 +9,14 @@
 
 %% putting chords up {{{
 \newcommand{\@@chord}[1]{\bf #1}
+\newsavebox{\@chord@box}
 \newlength{\@cwidth}
 \newlength{\@twidth}
 \newcommand{\@up}[2]{%
-	\settowidth{\@cwidth}{\@@chord{#1}}%
+	\savebox{\@chord@box}{\@@chord{#1}}%
+	\settowidth{\@cwidth}{\usebox{\@chord@box}}%
 	\settowidth{\@twidth}{#2}%
-	\raisebox{0.8\baselineskip}[1.5\baselineskip][0.5\baselineskip]{\@@chord{#1}}\hspace{-\@cwidth}%
+	\raisebox{0.8\baselineskip}[1.5\baselineskip][0.5\baselineskip]{\usebox{\@chord@box}}\hspace{-\@cwidth}%
 	\ifthenelse{\@cwidth > \@twidth}{\makebox[\@cwidth][l]{#2}}{#2}%
 }
 %}}}
