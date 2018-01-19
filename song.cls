@@ -7,8 +7,25 @@
 \RequirePackage[a5paper,margin=10mm]{geometry}
 \RequirePackage{ifthen}
 
+%% translating chord characters {{{
+\def\@translate#1{\@ifnextchar\@translate@end%
+	{\@translate@single #1\@gobble}%
+	{\@translate@single #1\@translate}%
+}
+\def\@translate@single#1{\@translate@cycle #1%
+	6{\ensuremath{^6}}%
+	7{\ensuremath{^7}}%
+	\#{\ensuremath{^\sharp}}%
+	,{\,}
+	\@translate@single@end%
+}
+\def\@translate@cycle#1{\@ifnextchar\@translate@single@end{#1\@gobble}{\@translate@test #1}}
+\def\@translate@test#1#2#3#4\@translate@single@end{\ifx#1#2#3\else%
+	\@translate@cycle #1#4\@translate@single@end\fi%
+}
+%}}}
 %% putting chords up {{{
-\newcommand{\@@chord}[1]{\bf #1}
+\newcommand{\@@chord}[1]{\bf \@translate #1\@translate@end}
 \newsavebox{\@chord@box}
 \newlength{\@cwidth}
 \newlength{\@twidth}
@@ -65,12 +82,6 @@
 %% title {{{
 \renewcommand{\maketitle}{{\LARGE\bf\MakeUppercase\@title}\\{\Large\@author}\par}
 \AtBeginDocument{\maketitle}
-%}}}
-%% chord helpers {{{
-\def\7{\ensuremath{^7}}
-\def\6{\ensuremath{^6}}
-\def\#{\ensuremath{^\sharp}}
-\def\^#1{\ensuremath{^#1}}
 %}}}
 %% other auxiliaries {{{
 %% repetition
