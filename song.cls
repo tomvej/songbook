@@ -15,6 +15,7 @@
 \def\@translate@single#1{\@translate@cycle #1%
 	6{\ensuremath{^6}}%
 	7{\ensuremath{^7}}%
+	9{\ensuremath{^9}}%
 	\#{\ensuremath{^\sharp}}%
 	,{\,}
 	\@translate@single@end%
