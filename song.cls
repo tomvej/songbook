@@ -45,10 +45,7 @@
 %}}}
 %% strophe parsing {{{
 {\catcode`\^^M=12%
-	\gdef\@strophe{
-		\catcode`\^^M=12
-		\@chord@helpers
-		\@strof}%
+	\gdef\@strophe{\catcode`\^^M=12 \@chord@helpers\@strof}%
 	\gdef\@strof#1^^M#2^^M{\@ifnextchar\egroup%
 		{\@srf{#1}{#2}}%
 		{\@srf{#1}{#2}\\\@strof}%
