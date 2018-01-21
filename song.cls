@@ -65,19 +65,24 @@
 \AtBeginDocument{\maketitle}
 %}}}
 %% chord helpers {{{
+\def\6{\ensuremath{^6}}
+\def\7{\ensuremath{^7}}
 \begingroup
 	\catcode`\#=\active
 	\catcode`\_=\active
+	\catcode`\6=\active
+	\catcode`\7=\active
 	\gdef\@chord@helpers{
 		\catcode`\#=\active
 		\def#{\ensuremath{^\sharp}}
 		\catcode`\_=\active
 		\def_{\,}
+		\catcode`\6=\active
+		\def6{\6}
+		\catcode`\7=\active
+		\def7{\7}
 	}
 \endgroup
-
-\def\7{\ensuremath{^7}}
-\def\6{\ensuremath{^6}}
 \def\^#1{\ensuremath{^#1}}
 %}}}
 %% other auxiliaries {{{
