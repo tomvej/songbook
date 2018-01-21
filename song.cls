@@ -47,7 +47,7 @@
 {\catcode`\^^M=12%
 	\gdef\@strophe{
 		\catcode`\^^M=12
-		\catcode`\#=\active
+		\@chord@helpers
 		\@strof}%
 	\gdef\@strof#1^^M#2^^M{\@ifnextchar\egroup%
 		{\@srf{#1}{#2}}%
@@ -69,10 +69,12 @@
 %}}}
 %% chord helpers {{{
 \begingroup
-\lccode`\~=`\#
-\lowercase{\endgroup
-	\def~{\ensuremath{^\sharp}}%
-}
+	\catcode`\#=\active
+	\gdef\@chord@helpers{
+		\catcode`\#=\active
+		\def#{\ensuremath{^\sharp}}
+	}
+\endgroup
 
 \def\7{\ensuremath{^7}}
 \def\6{\ensuremath{^6}}
