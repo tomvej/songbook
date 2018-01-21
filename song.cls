@@ -68,12 +68,14 @@
 \def\6{\ensuremath{^6}}
 \def\7{\ensuremath{^7}}
 \def\9{\ensuremath{^9}}
+\def\^#1{\ensuremath{^#1}}
 \begingroup
 	\catcode`\#=\active
 	\catcode`\_=\active
 	\catcode`\6=\active
 	\catcode`\7=\active
 	\catcode`\9=\active
+	\catcode`\^=\active
 	\gdef\@chord@helpers{
 		\catcode`\#=\active
 		\def#{\ensuremath{^\sharp}}
@@ -85,9 +87,10 @@
 		\def7{\7}
 		\catcode`\9=\active
 		\def9{\9}
+		\catcode`\^=\active
+		\def^{\^}
 	}
 \endgroup
-\def\^#1{\ensuremath{^#1}}
 %}}}
 %% other auxiliaries {{{
 %% repetition
