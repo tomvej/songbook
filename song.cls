@@ -45,7 +45,10 @@
 %}}}
 %% strophe parsing {{{
 {\catcode`\^^M=12%
-	\gdef\@strophe{\catcode`\^^M=12 \@strof}%
+	\gdef\@strophe{
+		\catcode`\^^M=12
+		\catcode`\#=\active
+		\@strof}%
 	\gdef\@strof#1^^M#2^^M{\@ifnextchar\egroup%
 		{\@srf{#1}{#2}}%
 		{\@srf{#1}{#2}\\\@strof}%
@@ -65,9 +68,14 @@
 \AtBeginDocument{\maketitle}
 %}}}
 %% chord helpers {{{
+\begingroup
+\lccode`\~=`\#
+\lowercase{\endgroup
+	\def~{\ensuremath{^\sharp}}%
+}
+
 \def\7{\ensuremath{^7}}
 \def\6{\ensuremath{^6}}
-\def\#{\ensuremath{^\sharp}}
 \def\^#1{\ensuremath{^#1}}
 %}}}
 %% other auxiliaries {{{
