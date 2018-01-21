@@ -76,19 +76,19 @@
 	\catcode`\7=\active
 	\catcode`\9=\active
 	\catcode`\^=\active
-	\gdef\@chord@helpers{
-		\catcode`\#=\active
-		\def#{\ensuremath{^\sharp}}
-		\catcode`\_=\active
-		\def_{\,}
-		\catcode`\6=\active
-		\def6{\6}
-		\catcode`\7=\active
-		\def7{\7}
-		\catcode`\9=\active
-		\def9{\9}
-		\catcode`\^=\active
-		\def^{\^}
+	\gdef\@chord@helpers{%
+		\catcode`\#=\active%
+		\def#{\ensuremath{^\sharp}}%
+		\catcode`\_=\active%
+		\def_{\,}%
+		\catcode`\6=\active%
+		\def6{\6}%
+		\catcode`\7=\active%
+		\def7{\7}%
+		\catcode`\9=\active%
+		\def9{\9}%
+		\catcode`\^=\active%
+		\def^{\^}%
 	}
 \endgroup
 %}}}
