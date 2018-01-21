@@ -45,9 +45,9 @@
 %}}}
 %% strophe parsing {{{
 {\catcode`\^^M=12%
-	\gdef\@strophe{\catcode`\^^M=12 \@strof}%
+	\gdef\@strophe{\catcode`\^^M=12 \@chord@helpers\@strof}%
 	\gdef\@strof#1^^M#2^^M{\@ifnextchar\egroup%
-		{\@srf{#1}{#2}}%
+		{\@srf{\@chord@helpers #1}{#2}}%
 		{\@srf{#1}{#2}\\\@strof}%
 	}%
 }
@@ -65,10 +65,32 @@
 \AtBeginDocument{\maketitle}
 %}}}
 %% chord helpers {{{
-\def\7{\ensuremath{^7}}
 \def\6{\ensuremath{^6}}
-\def\#{\ensuremath{^\sharp}}
+\def\7{\ensuremath{^7}}
+\def\9{\ensuremath{^9}}
 \def\^#1{\ensuremath{^#1}}
+\begingroup
+	\catcode`\#=\active
+	\catcode`\_=\active
+	\catcode`\6=\active
+	\catcode`\7=\active
+	\catcode`\9=\active
+	\catcode`\^=\active
+	\gdef\@chord@helpers{%
+		\catcode`\#=\active%
+		\def#{\ensuremath{^\sharp}}%
+		\catcode`\_=\active%
+		\def_{\,}%
+		\catcode`\6=\active%
+		\def6{\6}%
+		\catcode`\7=\active%
+		\def7{\7}%
+		\catcode`\9=\active%
+		\def9{\9}%
+		\catcode`\^=\active%
+		\def^{\^}%
+	}
+\endgroup
 %}}}
 %% other auxiliaries {{{
 %% repetition
