@@ -65,6 +65,7 @@
 \AtBeginDocument{\maketitle}
 %}}}
 %% chord helpers {{{
+\def\5{\ensuremath{^5}}
 \def\6{\ensuremath{^6}}
 \def\7{\ensuremath{^7}}
 \def\9{\ensuremath{^9}}
@@ -72,6 +73,7 @@
 \begingroup
 	\catcode`\#=\active
 	\catcode`\_=\active
+    \catcode`\5=\active
 	\catcode`\6=\active
 	\catcode`\7=\active
 	\catcode`\9=\active
@@ -81,6 +83,8 @@
 		\def#{\ensuremath{^\sharp}}%
 		\catcode`\_=\active%
 		\def_{\,}%
+        \catcode`\5=\active%
+        \def5{\5}%
 		\catcode`\6=\active%
 		\def6{\6}%
 		\catcode`\7=\active%
